@@ -1,0 +1,102 @@
+@media (max-width: 555px) {
+  header {
+    .title {
+      p:first-child {
+        font-size: 2rem !important;
+      }
+      p:last-child {
+        font-size: 3rem !important;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header__nav {
+    .header__burger {
+      display: block;
+      position: relative;
+      z-index: 3;
+      width: 30px;
+      height: 20px;
+
+      &::before,
+      &::after {
+        content: "";
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      & span {
+        position: absolute;
+        background-color: white;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease;
+      }
+      &.active {
+        &::before {
+          transform: rotate(45deg);
+          top: 9px;
+        }
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 9px;
+        }
+        span {
+          transform: scale(0);
+        }
+      }
+    }
+    ul {
+      flex-direction: column;
+    }
+    .header__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100% !important;
+      height: 100%;
+      background-color: $red;
+      padding: 70px 0 0 0;
+      transition: all 0.3s ease;
+      overflow: auto;
+      &.active {
+        top: 0;
+      }
+    }
+    .menu-item {
+      margin-bottom: 30px;
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  header {
+    background: url(../img/mogo.jpg) no-repeat;
+    background-size: cover;
+    color: white;
+    .title {
+      width: 100% !important;
+      p:last-child {
+        font-size: 7rem;
+        text-align: center;
+      }
+    }
+  }
+}
