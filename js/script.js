@@ -18,11 +18,12 @@ $(document).ready(function(){
         arrows: false,
         slidesToShow: 1,
         infinite: false,
+        adaptiveHeight: true,
         dots: true,
         appendDots: $('.intro__dots'),
         customPaging: function (slider, i) {
 			var title = $(slider.$slides[i]).data('title');
-			return '<span class="dots__item"><span class="dots__number">0'+ Number(i+1) + '</span>' + nameDots[i] + ' </span>';
+			return '<span class="dots__item"><span class="dots__number">0'+ Number(i+1) + '</span><span class="dots__text">' + nameDots[i] + '</span> </span>';
 		},
 		dotsClass: 'slider-dots'
     });

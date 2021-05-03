@@ -90,6 +90,10 @@
     font-size: 7rem;
     text-align: center;
   }
+  .intro__dots {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
   .intro__dots ul {
     padding-top: 20px;
   }
@@ -97,14 +101,13 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    max-width: 100px;
+    max-width: 150px;
   }
   .intro__dots ul li .dots__item {
     padding: 10px 0 !important;
   }
-  button {
-    padding: 10px 0;
-    text-align: center;
+  .intro__container {
+    min-height: auto !important;
   }
 }
 
@@ -115,6 +118,26 @@
   header .title p:last-child {
     font-size: 3rem !important;
     word-wrap: break-word;
+  }
+  .intro__dots ul li {
+    max-width: 20%;
+    min-width: 45px;
+    margin: 0 !important;
+  }
+  .intro__dots ul li .dots__item span.dots__text {
+    display: none;
+  }
+  .about__items {
+    margin: 20px 0 !important;
+  }
+  .about__items .about__item .about__text {
+    font-size: 1rem;
+  }
+  .about__items .about__item .about__text i {
+    font-size: 1.5rem !important;
+  }
+  .about__items .about__item .about__img {
+    height: 99%;
   }
 }
 
@@ -140,19 +163,46 @@ a {
   text-decoration: none;
 }
 
+.container {
+  padding: 40px 0;
+  width: 100%;
+}
+
 .title {
   text-align: center;
-  font-size: 4rem;
+  font-size: 2rem;
+}
+
+.title p {
+  color: #333333;
 }
 
 .title p:first-child {
   font-family: "Kaushan Script", cursive;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .title p:last-child {
   margin: 0;
   text-transform: uppercase;
+}
+
+.title:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #f38181;
+  margin: 40px auto;
+}
+
+p {
+  color: #999999;
+  text-align: center;
+}
+
+p.block-p {
+  line-height: 25px;
 }
 
 .btn {
@@ -181,8 +231,21 @@ header {
   color: white;
 }
 
+header p {
+  color: white;
+}
+
 header .title {
   width: 65%;
+}
+
+header .title p {
+  color: white;
+}
+
+header .title p:first-child {
+  font-size: 4rem;
+  margin-bottom: 10px;
 }
 
 header .title p:last-child {
@@ -191,11 +254,7 @@ header .title p:last-child {
 }
 
 header .title:after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #fff;
+  background-color: white;
   margin: 60px auto;
 }
 
@@ -213,6 +272,7 @@ header .title:after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 550px;
 }
 
 .slide__inner {
@@ -365,7 +425,91 @@ header .title:after {
 .intro__dots ul li.slick-active::before {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
-  width: 50% !important;
+  width: 60% !important;
+}
+
+.about__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 90px 0 40px 0;
+}
+
+.about__items .about__item {
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.about__items .about__item:hover .about__text {
+  display: block;
+  z-index: 5;
+}
+
+.about__items .about__item:hover .about__img img {
+  -webkit-transform: translate3d(-10px, -10px, 10px);
+          transform: translate3d(-10px, -10px, 10px);
+}
+
+.about__items .about__item:hover .about__img::before {
+  -webkit-transform: translate3d(-10px, -10px, 10px);
+          transform: translate3d(-10px, -10px, 10px);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f38181), to(#fce38a));
+  background: linear-gradient(#f38181, #fce38a);
+}
+
+.about__items .about__item .about__img {
+  background-color: #95e1d3;
+  max-height: 250px;
+}
+
+.about__items .about__item .about__img img {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.about__items .about__item .about__img::before {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 4;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.about__items .about__item img {
+  width: 100%;
+  height: 100%;
+}
+
+.about__items .about__item .about__text {
+  display: none;
+  z-index: 5;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+
+.about__items .about__item .about__text i {
+  font-size: 2rem;
+  margin: 5px;
 }
 
 @media (max-width: 1000px) {
