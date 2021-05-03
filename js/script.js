@@ -11,6 +11,24 @@ navButton.addEventListener('click', e => {
     document.querySelector('body').classList.toggle('lock')
 })
 
+const nameDots = [' Intro',' Work',' About',' Contacts',]
+
+$(document).ready(function(){
+    $('.slider').slick({
+        arrows: false,
+        slidesToShow: 1,
+        infinite: false,
+        dots: true,
+        appendDots: $('.intro__dots'),
+        customPaging: function (slider, i) {
+			var title = $(slider.$slides[i]).data('title');
+			return '<span class="dots__item"><span class="dots__number">0'+ Number(i+1) + '</span>' + nameDots[i] + ' </span>';
+		},
+		dotsClass: 'slider-dots'
+    });
+  });
+ 
+
 function initDisplaySearch() {
 
     btn_search.addEventListener('click', e => {

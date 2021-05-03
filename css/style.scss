@@ -53,6 +53,7 @@ a {
 header {
   background: url(../img/mogo.jpg) no-repeat;
   background-size: cover;
+  background-position: center;
   color: white;
   .title {
     width: 65%;
@@ -72,10 +73,13 @@ header {
   }
 }
 .intro__container {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.slide__inner {
+  padding: 5%;
 }
 .header__burger {
   display: none;
@@ -134,6 +138,60 @@ header {
   p {
     padding-left: 15px;
     font-size: 1.9rem;
+  }
+}
+
+.intro__dots {
+  display: flex;
+  margin: 5% 0;
+  padding: 0 5%;
+  font-size: 1.3rem;
+  cursor: pointer;
+
+  ul {
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+    li {
+      position: relative;
+      display: flex;
+      opacity: 0.5;
+      flex: 1 0 100px;
+      margin: 0 10px;
+      justify-content: space-between;
+      border-top: 3px solid $red;
+
+      .dots__item {
+        padding: 10px 0 0 0;
+      }
+      .dots__number {
+        font-weight: 700;
+      }
+
+      &.slick-active ~ li {
+        &::before {
+          width: 100%;
+        }
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 3px;
+        top: -3px;
+        right: 0;
+        background-color: white;
+        z-index: 4;
+        transition: all 0.3s ease;
+      }
+      &.slick-active {
+        opacity: 1;
+        &::before {
+          transition-delay: 0.3s;
+          width: 50% !important;
+        }
+      }
+    }
   }
 }
 

@@ -1,14 +1,4 @@
 @import url(./normalize.css);
-@media (max-width: 555px) {
-  header .title p:first-child {
-    font-size: 2rem !important;
-  }
-  header .title p:last-child {
-    font-size: 3rem !important;
-    word-wrap: break-word;
-  }
-}
-
 @media (max-width: 768px) {
   body.lock {
     overflow: hidden;
@@ -16,7 +6,7 @@
   .header__nav .header__burger {
     display: block;
     position: relative;
-    z-index: 3;
+    z-index: 10;
     width: 30px;
     height: 20px;
   }
@@ -68,6 +58,7 @@
   }
   .header__nav .header__menu {
     position: fixed;
+    z-index: 10;
     top: -100%;
     left: 0;
     width: 100% !important;
@@ -98,6 +89,32 @@
   header .title p:last-child {
     font-size: 7rem;
     text-align: center;
+  }
+  .intro__dots ul {
+    padding-top: 20px;
+  }
+  .intro__dots ul li {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 100px;
+  }
+  .intro__dots ul li .dots__item {
+    padding: 10px 0 !important;
+  }
+  button {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 555px) {
+  header .title p:first-child {
+    font-size: 2rem !important;
+  }
+  header .title p:last-child {
+    font-size: 3rem !important;
+    word-wrap: break-word;
   }
 }
 
@@ -160,6 +177,7 @@ a {
 header {
   background: url(../img/mogo.jpg) no-repeat;
   background-size: cover;
+  background-position: center;
   color: white;
 }
 
@@ -182,9 +200,9 @@ header .title:after {
 }
 
 .intro__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -195,6 +213,10 @@ header .title:after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.slide__inner {
+  padding: 5%;
 }
 
 .header__burger {
@@ -276,6 +298,74 @@ header .title:after {
 .header__nav p {
   padding-left: 15px;
   font-size: 1.9rem;
+}
+
+.intro__dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5% 0;
+  padding: 0 5%;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.intro__dots ul {
+  width: 100%;
+  margin: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.intro__dots ul li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.5;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100px;
+          flex: 1 0 100px;
+  margin: 0 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 3px solid #f38181;
+}
+
+.intro__dots ul li .dots__item {
+  padding: 10px 0 0 0;
+}
+
+.intro__dots ul li .dots__number {
+  font-weight: 700;
+}
+
+.intro__dots ul li.slick-active ~ li::before {
+  width: 100%;
+}
+
+.intro__dots ul li::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 3px;
+  top: -3px;
+  right: 0;
+  background-color: white;
+  z-index: 4;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.intro__dots ul li.slick-active {
+  opacity: 1;
+}
+
+.intro__dots ul li.slick-active::before {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  width: 50% !important;
 }
 
 @media (max-width: 1000px) {
