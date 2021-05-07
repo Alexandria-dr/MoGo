@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -70,57 +68,62 @@
             <span></span>
           </div>
         </div>
-        <div class="intro slider">
-          <div class="intro__container">
-            <div class="title intro">
-              <p>Creative Template</p>
-              <p>
-                <b
-                  >Welcome <br />
-                  to MoGo</b
-                >
-              </p>
+        <div class="swiper-container">
+          <div class="intro slider swiper-wrapper">
+            <div class="intro__container swiper-slide">
+              <div class="title intro">
+                <p>Creative Template</p>
+                <p>
+                  <b
+                    >Welcome <br />
+                    to MoGo</b
+                  >
+                </p>
+              </div>
+              <a class="btn" href="#">Learn More</a>
             </div>
-            <a class="btn" href="#">Learn More</a>
-          </div>
-          <div class="intro__container">
-            <div class="slide__inner">
-              <p class="block-p">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Accusantium nesciunt temporibus unde quos totam quae dicta id
-                quasi quibusdam, rerum tempore natus quo aliquam nostrum minus
-                iure saepe provident facilis architecto beatae aspernatur enim,
-                omnis possimus! Nam, enim itaque excepturi cum atque sequi
-                consectetur, laudantium magni veritatis quaerat eius adipisci!
-              </p>
+            <div class="intro__container swiper-slide">
+              <div class="slide__inner">
+                <p class="block-p">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Accusantium nesciunt temporibus unde quos totam quae dicta id
+                  quasi quibusdam, rerum tempore natus quo aliquam nostrum minus
+                  iure saepe provident facilis architecto beatae aspernatur
+                  enim, omnis possimus! Nam, enim itaque excepturi cum atque
+                  sequi consectetur, laudantium magni veritatis quaerat eius
+                  adipisci!
+                </p>
+              </div>
+            </div>
+            <div class="intro__container swiper-slide">
+              <div class="slide__inner">
+                <p class="block-p">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Accusantium nesciunt temporibus unde quos totam quae dicta id
+                  quasi quibusdam, rerum tempore natus quo aliquam nostrum minus
+                  iure saepe provident facilis architecto beatae aspernatur
+                  enim, omnis possimus! Nam, enim itaque excepturi cum atque
+                  sequi consectetur, laudantium magni veritatis quaerat eius
+                  adipisci!
+                </p>
+              </div>
+            </div>
+            <div class="intro__container swiper-slide">
+              <div class="slide__inner">
+                <p class="block-p">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Accusantium nesciunt temporibus unde quos totam quae dicta id
+                  quasi quibusdam, rerum tempore natus quo aliquam nostrum minus
+                  iure saepe provident facilis architecto beatae aspernatur
+                  enim, omnis possimus! Nam, enim itaque excepturi cum atque
+                  sequi consectetur, laudantium magni veritatis quaerat eius
+                  adipisci!
+                </p>
+              </div>
             </div>
           </div>
-          <div class="intro__container">
-            <div class="slide__inner">
-              <p class="block-p">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Accusantium nesciunt temporibus unde quos totam quae dicta id
-                quasi quibusdam, rerum tempore natus quo aliquam nostrum minus
-                iure saepe provident facilis architecto beatae aspernatur enim,
-                omnis possimus! Nam, enim itaque excepturi cum atque sequi
-                consectetur, laudantium magni veritatis quaerat eius adipisci!
-              </p>
-            </div>
-          </div>
-          <div class="intro__container">
-            <div class="slide__inner">
-              <p class="block-p">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Accusantium nesciunt temporibus unde quos totam quae dicta id
-                quasi quibusdam, rerum tempore natus quo aliquam nostrum minus
-                iure saepe provident facilis architecto beatae aspernatur enim,
-                omnis possimus! Nam, enim itaque excepturi cum atque sequi
-                consectetur, laudantium magni veritatis quaerat eius adipisci!
-              </p>
-            </div>
-          </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="intro__dots"></div>
       </header>
       <section class="about">
         <div class="container">
@@ -137,7 +140,7 @@
           <div class="about__items">
             <div class="about__item">
               <div class="about__img">
-                <img src="./img/photo1.png" alt="best team" />
+                <img src="./img/photo1.webp" alt="best team" />
                 <div class="about__text">
                   <i class="fas fa-user-friends"></i> <br />
                   Super team
@@ -147,7 +150,7 @@
 
             <div class="about__item">
               <div class="about__img">
-                <img src="./img/photo2.png" alt="best style" />
+                <img src="./img/photo2.webp" alt="best style" />
                 <div class="about__text">
                   <i class="fas fa-camera-retro"></i> <br />
                   Cool style
@@ -157,7 +160,7 @@
 
             <div class="about__item">
               <div class="about__img">
-                <img src="./img/photo3.png" alt="best work" />
+                <img src="./img/photo3.webp" alt="best work" />
                 <div class="about__text">
                   <i class="fas fa-briefcase"></i> <br />
                   Best work
@@ -187,18 +190,7 @@
         </div>
       </section>
     </div>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

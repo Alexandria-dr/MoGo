@@ -13,21 +13,20 @@ navButton.addEventListener('click', e => {
 
 const nameDots = [' Intro',' Work',' About',' Contacts',]
 
-$(document).ready(function(){
-    $('.slider').slick({
-        arrows: false,
-        slidesToShow: 1,
-        infinite: false,
-        adaptiveHeight: true,
-        dots: true,
-        appendDots: $('.intro__dots'),
-        customPaging: function (slider, i) {
-			var title = $(slider.$slides[i]).data('title');
-			return '<span class="dots__item"><span class="dots__number">0'+ Number(i+1) + '</span><span class="dots__text">' + nameDots[i] + '</span> </span>';
-		},
-		dotsClass: 'slider-dots'
-    });
-  });
+new Swiper('.swiper-container', {
+  pagination: {
+    el: '.swiper-pagination',
+    autoHeight: true,
+    clickable: true,
+    renderBullet: function(index, className) {
+      return '\
+        <div class="box ' + className + '">\
+        <div class="bigNumber">' + (index < 10 ? '0' + (index + 1) : (index + 1)) + '</div>\
+        <div class="text">' + (nameDots[index]) + '</div>\
+        </div>';
+    },
+  },
+});
  
 
 function initDisplaySearch() {
